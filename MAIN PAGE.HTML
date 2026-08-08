@@ -1,0 +1,140 @@
+        <!DOCTYPE html>
+        <html lang="id">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>SMAN 16 Surabaya-Cerdas Bersinar</title>
+            <link rel="stylesheet" href="style.css">
+
+            <!-- Font Awesome -->   
+            <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+        </head>
+        <body>
+
+
+        <header>
+            <nav>
+                <div class="logo">
+                    <img src="SIXTEEN.png" alt="" style="width:25px;height:43px;">
+                </div>
+
+                <ul>
+                    <li><a class="active" href="#">Home</a></li>
+                    <li><a href="#">Profil</a></li>
+                    <li><a href="#">Kurikulum</a></li>
+                    <li><a href="#">Kesiswaan</a></li>
+                </ul>
+
+                <div class="menu-right">
+            <button id="theme-toggle">
+                <i class="fa-regular fa-moon"></i>
+            </button>
+                </div>
+                
+            </nav>
+        </header>
+
+        <section class="hero">
+
+            <img src="sekolah.jpg" class="bg">
+
+            
+            <div class="search">
+                <input type="text" placeholder="Search">
+                <button><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+
+            <div class="content">
+                <h1>
+                    SMA <br>
+                    NEGERI 16
+                    SURABAYA
+                </h1>
+
+                <h2>CERDAS BERSINAR</h2>
+
+                <p>
+                    Cakap, Excellent, Religius, Disiplin, Aktif,
+                    Sportif, Bersih, Sejuk, Indah, dan Anti Narkoba
+                </p>
+
+                <div class="btn-group">
+                    <button class="explore">Eksplore</button>
+
+                    <button class="play">
+                        <i class="fa-solid fa-bookmark"></i>
+                    </button>
+                </div>
+
+            </div>
+
+        </section>
+        
+        <script>
+            const themeToggle = document.getElementById("theme-toggle");
+            const icon = themeToggle.querySelector("i");
+
+            themeToggle.addEventListener("click", function () {
+
+                document.body.classList.toggle("dark-mode");
+
+                if (document.body.classList.contains("dark-mode")) {
+
+                    // Night Mode
+                    icon.classList.remove("fa-moon");
+                    icon.classList.add("fa-sun");
+
+                } else {
+
+                    // Day Mode
+                    icon.classList.remove("fa-sun");
+                    icon.classList.add("fa-moon");
+
+                }
+
+            });
+        </script>
+
+        </body>
+
+
+                
+         <section class="about-section">
+         
+    <h1>ABOUT SIXTEEN</h1>
+
+    <div class="about-container">
+
+        <!-- SIXTEENAGERS -->
+        <a href="sixteenagers.html" class="about-card sixteenagers">
+            <div class="image-box">
+                <img src="sixteenagers.jpg" alt="Sixteenagers">
+            </div>
+            <h2>SIXTEENAGERS</h2>
+        </a>
+
+
+        <!-- KEPALA SEKOLAH -->
+        <a href="kepala-sekolah.html" class="about-card kepala-sekolah">
+            <div class="image-box">
+                <img src="kepala-sekolah.jpg" alt="Kepala Sekolah">
+            </div>
+            <h2>SAMBUTAN KEPALA<br>SEKOLAH</h2>
+        </a>
+
+
+        <!-- VISI MISI -->
+        <a href="visi-misi.html" class="about-card visi-misi">
+            <div class="image-box">
+                <img src="visi-misi.jpg" alt="Visi dan Misi">
+            </div>
+            <h2>VISI & MISI</h2>
+        </a>
+
+    </div>
+
+
+
+
+        </html>

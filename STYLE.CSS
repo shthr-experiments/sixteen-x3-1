@@ -1,0 +1,553 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    overflow-x:hidden;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.logo img{
+    width: 130px;
+    height:auto;
+    display:block;
+}
+
+header{
+    width:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:100;
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+    background:white;
+}
+
+nav ul{
+    display:flex;
+    gap:50px;
+    list-style:none;
+}
+
+nav a{
+    text-decoration:none;
+    color:#3462b4;
+}
+
+.active{
+    font-weight:bold;
+}
+
+.menu-right{
+    display:flex;
+    gap:10px;
+    align-items:center;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    position:relative;
+    width:100%;
+    height:100vh;
+}
+
+.bg{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+
+/* Overlay */
+
+.overlay{
+    position:absolute;
+    top:0;
+    left:0;
+    width:58%;
+    height:100%;
+    background:rgba(19,77,180,.55);
+}
+
+
+/* =========================
+   SEARCH BAR
+========================= */
+
+.search{
+    position:absolute;
+    top:90px;
+    left:50%;
+    transform:translateX(-50%);
+    width:450px;
+    display:flex;
+
+    /* Glassmorphism */
+    background:rgba(255,255,255,0.18);
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,0.35);
+    border-radius:40px;
+
+    box-shadow:0 8px 30px rgba(0,0,0,0.15);
+
+    overflow:hidden;
+}
+
+.search input{
+    flex:1;
+    padding:15px 20px;
+
+    border:none;
+    outline:none;
+
+    background:transparent;
+    color:white;
+
+    font-size:16px;
+}
+
+.search input::placeholder{
+    color:rgba(255,255,255,0.85);
+}
+
+.search button{
+    width:70px;
+
+    border:none;
+    background:transparent;
+    color:white;
+
+    border-radius:0 40px 40px 0;
+
+    font-size:20px;
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.search button:hover{
+    background:rgba(255,255,255,0.15);
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.content{
+    position:absolute;
+    left:50px;
+    top:120px;
+    color:white;
+    max-width:650px;
+}
+
+.content h1{
+    font-size:110px;
+    line-height:0.95;
+    font-weight:900;
+}
+
+.content h2{
+    margin-top:35px;
+    font-size:45px;
+}
+
+.content p{
+    margin-top:10px;
+    font-size:20px;
+    width:600px;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.btn-group{
+    display:flex;
+    gap:15px;
+    margin-top:40px;
+}
+
+.explore{
+    width:210px;
+    height:60px;
+    border:none;
+    border-radius:15px;
+
+    font-size:30px;
+    color:#2556b0;
+    font-weight:bold;
+
+    cursor:pointer;
+}
+
+.play{
+    width:60px;
+    height:60px;
+
+    border:none;
+    border-radius:50%;
+
+    background:white;
+    color:#2556b0;
+
+    font-size:25px;
+    cursor:pointer;
+}
+
+
+/* =========================
+   DARK / LIGHT MODE
+========================= */
+
+#theme-toggle{
+    background:transparent;
+    border:none;
+
+    color:#3462b4;
+    font-size:22px;
+
+    cursor:pointer;
+    padding:8px;
+
+    transition:all 0.3s ease;
+}
+
+#theme-toggle:hover{
+    transform:rotate(20deg) scale(1.1);
+}
+
+
+/* =========================
+   DARK MODE
+========================= */
+
+body.dark-mode nav{
+    background:#111;
+}
+
+body.dark-mode nav a{
+    color:white;
+}
+
+body.dark-mode #theme-toggle{
+    color:white;
+}
+
+
+/* Background */
+
+body.dark-mode .bg{
+    filter:brightness(45%);
+}
+
+
+/* Overlay */
+
+body.dark-mode .overlay{
+    background:rgba(0,0,0,0.55);
+}
+
+
+/* Search Dark Mode */
+
+body.dark-mode .search{
+    background:rgba(0,0,0,0.20);
+
+    border:1px solid rgba(255,255,255,0.25);
+
+    box-shadow:0 8px 30px rgba(0,0,0,0.4);
+}
+
+body.dark-mode .search input{
+    background:transparent;
+    color:white;
+}
+
+body.dark-mode .search input::placeholder{
+    color:rgba(255,255,255,0.65);
+}
+
+body.dark-mode .search button{
+    background:transparent;
+    color:white;
+}
+
+body.dark-mode .search button:hover{
+    background:rgba(255,255,255,0.1);
+}
+
+
+/* Explore */
+
+body.dark-mode .explore{
+    background:#222;
+    color:white;
+}
+
+
+/* Bookmark */
+
+body.dark-mode .play{
+    background:#222;
+    color:white;
+}
+
+
+.about-section{
+    min-height:100vh;
+    position:relative;
+
+    background:
+        linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.65)),
+        url("about-bg.jpg");
+
+    background-size:cover;
+    background-position:center;
+
+    padding-top:45px;
+    text-align:center;
+}
+
+
+.about-section > h1{
+    color:white;
+    font-size:60px;
+    font-weight:900;
+
+    text-shadow:
+        3px 3px 0 #555,
+        0 5px 15px rgba(0,0,0,.5);
+
+    margin-bottom:45px;
+}
+
+
+/* Container */
+
+.about-container{
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    gap:80px;
+}
+
+
+/* Card */
+
+.about-card{
+    width:245px;
+
+    text-decoration:none;
+    color:white;
+
+    display:block;
+
+    transition:
+        transform .35s ease,
+        filter .35s ease;
+}
+
+
+/* Gambar */
+
+.image-box{
+    width:245px;
+    height:310px;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    border:9px solid white;
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+}
+
+
+.image-box img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:transform .5s ease;
+}
+
+
+/* Judul */
+
+.about-card h2{
+    margin-top:12px;
+
+    font-size:21px;
+    font-weight:900;
+
+    color:white;
+
+    text-shadow:2px 2px 5px rgba(0,0,0,.7);
+}
+
+
+/* Hover */
+
+.about-card:hover{
+    transform:translateY(-15px);
+}
+
+
+.about-card:hover .image-box{
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.5);
+}
+
+
+.about-card:hover img{
+    transform:scale(1.08);
+}
+
+
+/* Warna border masing-masing */
+
+.sixteenagers .image-box{
+    border-color:#55c77a;
+}
+
+.kepala-sekolah .image-box{
+    border-color:#ffd34d;
+}
+
+.visi-misi .image-box{
+    border-color:#1da9df;
+}
+
+.sixteen-page{
+    min-height:100vh;
+
+    display:flex;
+    align-items:center;
+
+    padding:120px 80px;
+
+    position:relative;
+    overflow:hidden;
+
+    color:white;
+}
+
+/* Background blur */
+.sixteen-page::before{
+    content:"";
+
+    position:absolute;
+    inset:-20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.75),
+            rgba(0,0,0,.25)
+        ),
+        url("sixteenagers-bg.jpg");
+
+    background-size:cover;
+    background-position:center;
+
+    filter:blur(8px);
+
+    transform:scale(1.05);
+
+    z-index:0;
+}
+
+/* Isi tetap tajam */
+.sixteen-content{
+    position:relative;
+    z-index:1;
+}
+
+.sixteen-content{
+    max-width:700px;
+}
+
+
+.small-title{
+    font-size:20px;
+    letter-spacing:5px;
+    font-weight:bold;
+
+    color:#5cc8ff;
+}
+
+
+.sixteen-content h1{
+    font-size:85px;
+    line-height:1;
+
+    margin:15px 0 30px;
+
+    font-weight:900;
+}
+
+
+.sixteen-content p{
+    font-size:19px;
+    line-height:1.7;
+
+    margin-bottom:15px;
+
+    color:#eee;
+}
+
+
+.back-button{
+    display:inline-flex;
+
+    align-items:center;
+    gap:10px;
+
+    margin-top:30px;
+
+    padding:13px 25px;
+
+    border-radius:30px;
+
+    background:white;
+    color:#2556b0;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+
+.back-button:hover{
+    transform:translateX(-5px);
+}
